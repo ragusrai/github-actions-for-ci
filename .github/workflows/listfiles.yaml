@@ -17,5 +17,6 @@ jobs:
           echo "All:"
           echo "${{ steps.changes.outputs.all }}"
           if: startsWith("${{ steps.changes.outputs.all }}, 'github')
-            ACCESSIBILITY_REQUIRED = true
-          echo ${{ACCESSIBILITY_REQUIRED}}
+            env:
+              accessibility_required = true
+          echo ${{accessibility_required}}
