@@ -16,7 +16,7 @@ jobs:
         -"model/"
         -"ui/src"
     steps :
-      - name: files
+      - id: files
         uses: jitterbit/get-changed-files@v1
       - run: |
           for changed_file in ${{ steps.files.outputs.all }}; do
