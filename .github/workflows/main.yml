@@ -3,10 +3,24 @@ on: push
 jobs:
   job:
     runs-on: ubuntu-latest
+    env:
+      suffixesForBuilds:
+        -"build.sbt"
+        -".p12"
+        -"package.json"
+      prefixesForBuilds:
+        -"core-services/"
+        -"events-api/"
+        -"http-api/"
+        -"auth-api/"
+        -"model/"
+        -"ui/src"
     steps :
       - name: files
         uses: jitterbit/get-changed-files@v1
       - run: |
           for changed_file in ${{ steps.files.outputs.all }}; do
             echo "Do something with this ${changed_file}."
+            echo changed_file.path
           done
+            
