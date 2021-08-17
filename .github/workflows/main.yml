@@ -22,17 +22,3 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-
-      - name: var
-        env:
-          prefixesForBuilds: 
-            -"core-services"
-            -"events-api"
-            -"http-api"
-            -"auth-api/"
-            -"model/"
-            -"ui/src"
-          suffixesForBuilds:
-            -"build.sbt"
-            -".p12"
-            -"package.json"
