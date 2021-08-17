@@ -16,7 +16,5 @@ jobs:
         run: |
           echo "All:"
           echo "${{ steps.changes.outputs.all }}"
-          if: startsWith("${{ steps.changes.outputs.all }}, 'github1')
-            env:
-              a = true
-          echo ${{env.a}}
+          if: startsWith("${{ steps.changes.outputs.all }}, 'github')
+            echo "yes"
