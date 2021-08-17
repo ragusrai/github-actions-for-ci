@@ -15,5 +15,6 @@ jobs:
           echo "All:"
           echo "${{ steps.changes.outputs.all }}"
       - if: startsWith("${{ steps.changes.outputs.all }}, 'github')
+      - name: ui
+        run: |
           echo "yes"
-
