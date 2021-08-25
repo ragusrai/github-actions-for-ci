@@ -8,6 +8,5 @@ jobs:
         fl: ['core-services/','events-api/','http-api/','auth-api/','model/','ui/src']
     steps:
       - name: arr
-        run: |
           echo ${{ matrix.fl }}
       
