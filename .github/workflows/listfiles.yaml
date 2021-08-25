@@ -3,18 +3,11 @@ on: push
 jobs:
   job:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        fl: ['core-services/','events-api/','http-api/','auth-api/','model/','ui/src']
     steps:
-      - uses: actions/checkout@v2.1.0
-      - uses: jitterbit/get-changed-files@v1
-        id: changes
-        with:
-          format: space-delimited
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Printing
+      - name: arr
         run: |
-          echo "All:"
-          echo "${{ steps.changes.outputs.all }}"
-      - if: startsWith("${{ steps.changes.outputs.all }}, 'github')
-        name: ui
-        run: |
-          echo "yes"
+          echo ${{ matrix.fl }}
+      
